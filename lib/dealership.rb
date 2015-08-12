@@ -20,8 +20,15 @@ class Dealership
     @cars
   end
 
+  define_singleton_method(:all) do
+    @@dealerships
+  end
+
   define_singleton_method(:clear) do
     @@dealerships.clear()
   end
-  
+
+  def save
+    @@dealerships.push(self)
+  end
 end
