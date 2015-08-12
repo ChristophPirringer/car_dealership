@@ -6,6 +6,7 @@ class Vehicle
     @make = make
     @model = model
     @year = year
+    @id = @@vehicles.length().+(1)
   end
 
   def make
@@ -41,5 +42,10 @@ class Vehicle
     american_cars = ["Chrsyler", "Ford", "GM"]
     american_cars.include?(@make).&(self.age.<=(15))
   end
+
+  def id
+    car_id = @@vehicles.index(self).+(1)
+  end
+
 
 end
