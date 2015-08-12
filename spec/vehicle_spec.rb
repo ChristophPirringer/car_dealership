@@ -60,4 +60,15 @@ describe("Vehicle")do
       expect(test_vehicle.id()).to(eq(1))
     end
   end
+
+  describe('.find') do
+    it('return vehicle by id number') do
+      test_vehicle = Vehicle.new("Toyota", "Prius", 2000)
+      test_vehicle.save()
+      test_vehicle2 = Vehicle.new("Ford", "Mercury", 2009)
+      test_vehicle2.save()
+      expect(Vehicle.find(test_vehicle.id())).to(eq(test_vehicle))
+    end
+  end
+
 end
