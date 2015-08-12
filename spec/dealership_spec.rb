@@ -14,6 +14,13 @@ describe(Dealership) do
     end
   end
 
+  describe('#id') do
+    it('returns the id of dealership') do
+      test_dealership = Dealership.new("Christoph's amazing cars")
+      expect(test_dealership.id()).to(eq(1))
+    end
+  end
+
 
 
 
