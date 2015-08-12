@@ -32,4 +32,14 @@ class Vehicle
     @@vehicles = []
   end
 
+  def age
+    current_year = Time.new().year()
+    age = current_year.-(@year)
+  end
+
+  def worth_buying?
+    american_cars = ["Chrsyler", "Ford", "GM"]
+    american_cars.include?(@make).&(self.age.<=(15))
+  end
+
 end
